@@ -13,8 +13,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 100vh;
+  backdrop-filter: blur(2px);
 }
 .container {
   position: relative;
@@ -22,10 +22,12 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: 350px;
   backdrop-filter: blur(8px);
-  height: 510px;
+  height: max-content;
   border-radius: 15px;
   padding: 15px;
+  transition: height 5s;
 }
+/* search section */
 .search-box {
   position: relative;
   width: 100%;
@@ -53,6 +55,11 @@ body {
 .search-box .search::placeholder {
   font-size: 22px;
   color: #ffffffde;
+  background-color: transparent;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 60000000s, color 60000000s;
 }
 .location-icon {
   position: absolute;
@@ -78,6 +85,7 @@ body {
   padding: 8px;
   border-radius: 50%;
 }
+/* temparature section */
 .weather-box {
   position: relative;
   text-align: center;
@@ -112,6 +120,7 @@ body {
   font-size: 25px;
   font-weight: 450;
 }
+/* wind section */
 .wind {
   display: flex;
   flex-direction: row;
